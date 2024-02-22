@@ -9,7 +9,7 @@ export PYTHONPATH=$PREFIX/share/qgis/python/plugins/processing:$PREFIX/share/qgi
 EXT=shp
 srcDir="/home/dgketchum/data/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS/split_filtered"
 dstDir="/home/dgketchum/data/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS/split_filtered_aea"
-for path in $(find ${$srcDir} -maxdepth 1 -mindepth 1 -type d); do
+for path in $(find ${srcDir} -maxdepth 1 -mindepth 1 -type d); do
         cd "$path"
   mgrs="$(basename "${path}")"
   mkdir -p "$dstDir/$mgrs"

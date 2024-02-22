@@ -36,15 +36,12 @@ if not os.path.isfile(ERROR_LOG):
 @click.argument('overwrite')
 def main(state, direct, overwrite=False):
 
-    d = '/home/dgketchum/data/IrrigationGIS'
+    d = '/home/dgketchum/data/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS'
     if not os.path.isdir(d):
-        d = '/media/research/IrrigationGIS'
+        d = '/media/research/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS'
 
-    if direct not in ['13UBP']:
-        return None
-
-    split = os.path.join(d, 'openET/MGRS/split_aea/{}/{}/'.format(state, direct))
-    cleaned = os.path.join(d, 'openET/MGRS/split_cleaned_aea/{}/'.format(state, direct))
+    split = os.path.join(d, 'split_filtered_aea/{}'.format(direct))
+    cleaned = os.path.join(d, 'split_cleaned_aea/{}'.format(direct))
 
     f = [os.path.join(split, x) for x in os.listdir(split) if x.endswith('.shp')]
     codes = [x.split('_')[-1].strip('.shp') for x in f]

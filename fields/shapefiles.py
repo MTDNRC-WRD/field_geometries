@@ -26,7 +26,7 @@ def shapefiles(state):
          'MN': ['CLU'],
          'MO': ['CLU'],
          'MS': ['CLU'],
-         'MT': ['DNRC', 'CLU'],
+         'MT': ['MTDNRC', 'CLU'],
          'NC': ['CLU'],
          'ND': ['CLU'],
          'NE': ['NEDNR', 'CLU'],
