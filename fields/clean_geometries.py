@@ -36,9 +36,15 @@ if not os.path.isfile(ERROR_LOG):
 @click.argument('overwrite')
 def main(state, direct, overwrite=False):
 
-    d = '/home/dgketchum/data/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS'
-    if not os.path.isdir(d):
-        d = '/media/research/IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS'
+    print(direct)
+    if direct != '13TDL':
+        return
+
+    root = '/home/dgketchum/data'
+    if not os.path.isdir(root):
+        root = '/media/research'
+
+    d = os.path.join(root, 'IrrigationGIS/Montana/statewide_irrigation_dataset/future_work_15FEB2024/MGRS')
 
     split = os.path.join(d, 'split_filtered_aea/{}'.format(direct))
     cleaned = os.path.join(d, 'split_cleaned_aea/{}'.format(direct))
